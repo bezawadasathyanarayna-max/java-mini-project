@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(135deg, #edf5ff 0%, #dfefff 100%);
+}
+
+.auth-page .auth-card {
+  max-width: 520px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-header h1 {
+  margin-bottom: 0.25rem;
+}

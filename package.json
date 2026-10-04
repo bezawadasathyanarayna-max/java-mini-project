@@ -1,0 +1,10 @@
+{
+  "name": "campus-lost-found",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:backend": "npm install --prefix backend",
+    "dev:backend": "npm run dev --prefix backend",
+    "start:backend": "npm start --prefix backend"
+  }
+}

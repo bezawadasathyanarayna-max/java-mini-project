@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Found Item</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">Campus Lost & Found</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-lost.html">Report Lost</a>
+        <a href="report-found.html">Report Found</a>
+        <a href="lost-items.html">Lost Items</a>
+        <a href="found-items.html">Found Items</a>
+        <a href="my-reports.html" data-auth-link="dashboard">Dashboard</a>
+      </div>
+      <div class="nav-actions">
+        <span class="muted" data-user-name>Guest</span>
+        <a class="btn btn-light" href="login.html" data-auth-link="login">Login</a>
+        <a class="btn btn-primary" href="register.html" data-auth-link="register">Register</a>
+        <button class="btn btn-light hidden" data-logout>Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-title">
+    <h1>Report a Found Item</h1>
+    <div class="form-shell">
+      <form id="report-found-form">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="item_name">Item Name</label>
+            <input id="item_name" name="item_name" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select category</option>
+              <option>Mobile Phone</option>
+              <option>Laptop</option>
+              <option>Tablet</option>
+              <option>Watch</option>
+              <option>Earphones</option>
+              <option>ID Card</option>
+              <option>Wallet</option>
+              <option>Bag</option>
+              <option>Books</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="date">Date Found</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+
+          <div class="form-field">
+            <label for="time">Time Found</label>
+            <input id="time" name="time" type="time" />
+          </div>
+
+          <div class="form-field">
+            <label for="location">Location Found</label>
+            <input id="location" name="location" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="color">Color</label>
+            <input id="color" name="color" type="text" />
+          </div>
+
+          <div class="form-field">
+            <label for="brand">Brand</label>
+            <input id="brand" name="brand" type="text" />
+          </div>
+
+          <div class="form-field full-width">
+            <label for="unique_details">Unique Identification Details</label>
+            <textarea id="unique_details" name="unique_details"></textarea>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="contact_info">Contact Information</label>
+            <input id="contact_info" name="contact_info" type="text" placeholder="Phone or alternate contact details" />
+          </div>
+
+          <div class="form-field full-width">
+            <label for="image_url">Image URL (optional)</label>
+            <input id="image_url" name="image_url" type="url" placeholder="https://example.com/image.jpg" />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit Found Item</button>
+          <a href="my-reports.html" class="btn btn-light">My Reports</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/report-found.js"></script>
+</body>
+</html>

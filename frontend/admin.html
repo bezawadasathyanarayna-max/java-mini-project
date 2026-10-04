@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">Campus Lost & Found</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin Dashboard</a>
+      </div>
+      <div class="nav-actions">
+        <span class="muted" data-user-name>Guest</span>
+        <button class="btn btn-light hidden" data-logout>Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-title">
+    <h1>Admin Dashboard</h1>
+    <div id="admin-stats" class="dashboard-grid"></div>
+
+    <div class="dashboard-shell" style="margin-top: 1.5rem;">
+      <h2>All Claims</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Item</th>
+              <th>Claimant</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-claims-table"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dashboard-shell" style="margin-top: 1.5rem;">
+      <h2>All Items</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-items-table"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dashboard-shell" style="margin-top: 1.5rem;">
+      <h2>Users</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody id="admin-users-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

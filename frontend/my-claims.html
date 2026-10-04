@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Claims</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">Campus Lost & Found</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-lost.html">Report Lost</a>
+        <a href="report-found.html">Report Found</a>
+        <a href="my-reports.html">My Reports</a>
+        <a href="my-claims.html">My Claims</a>
+        <a href="admin.html" data-auth-link="dashboard">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <span class="muted" data-user-name>Guest</span>
+        <button class="btn btn-light hidden" data-logout>Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-title">
+    <h1>My Claims</h1>
+    <div class="dashboard-shell">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Claim ID</th>
+              <th>Item</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="my-claims-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

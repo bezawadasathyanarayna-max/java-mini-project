@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Lost & Found</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a class="brand" href="index.html">Campus Lost & Found</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-lost.html">Report Lost</a>
+        <a href="report-found.html">Report Found</a>
+        <a href="lost-items.html">Lost Items</a>
+        <a href="found-items.html">Found Items</a>
+        <a href="my-reports.html" data-auth-link="dashboard">Dashboard</a>
+      </div>
+      <div class="nav-actions">
+        <span class="muted" data-user-name>Guest</span>
+        <a class="btn btn-light" href="login.html" data-auth-link="login">Login</a>
+        <a class="btn btn-primary" href="register.html" data-auth-link="register">Register</a>
+        <button class="btn btn-light hidden" data-logout>Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Lost Something on Campus?</h1>
+        <p>Report it and help your campus community find it.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="report-lost.html">Report Lost Item</a>
+          <a class="btn btn-secondary" href="report-found.html">Report Found Item</a>
+          <a class="btn btn-light" href="lost-items.html">Browse Items</a>
+        </div>
+        <div class="stat-grid" id="home-stats">
+          <div class="stat-card">
+            <h4>Total Lost Items</h4>
+            <strong id="total-lost">0</strong>
+          </div>
+          <div class="stat-card">
+            <h4>Total Found Items</h4>
+            <strong id="total-found">0</strong>
+          </div>
+          <div class="stat-card">
+            <h4>Items Returned</h4>
+            <strong id="items-returned">0</strong>
+          </div>
+          <div class="stat-card">
+            <h4>Active Claims</h4>
+            <strong id="active-claims">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-box">
+        <h3>How it works</h3>
+        <ol>
+          <li>Report</li>
+          <li>Search</li>
+          <li>Claim</li>
+          <li>Return</li>
+        </ol>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recent Campus Activity</h2>
+        </div>
+        <div class="how-it-works">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Report</h3>
+            <p>Quickly submit a lost or found item with details.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Search</h3>
+            <p>Browse items by category, date, and location.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Claim</h3>
+            <p>Contact the reporter and share proof information.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Return</h3>
+            <p>Admins help verify and return the correct item.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

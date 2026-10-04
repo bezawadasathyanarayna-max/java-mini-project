@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Found Items</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="found">
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">Campus Lost & Found</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-lost.html">Report Lost</a>
+        <a href="report-found.html">Report Found</a>
+        <a href="lost-items.html">Lost Items</a>
+        <a href="found-items.html">Found Items</a>
+        <a href="my-reports.html" data-auth-link="dashboard">Dashboard</a>
+      </div>
+      <div class="nav-actions">
+        <span class="muted" data-user-name>Guest</span>
+        <a class="btn btn-light" href="login.html" data-auth-link="login">Login</a>
+        <a class="btn btn-primary" href="register.html" data-auth-link="register">Register</a>
+        <button class="btn btn-light hidden" data-logout>Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-title">
+    <h1>Found Items</h1>
+
+    <section class="form-shell" style="margin-bottom: 1.5rem;">
+      <form id="filter-form" class="form-grid">
+        <div class="form-field">
+          <label for="search">Search</label>
+          <input id="search" type="text" placeholder="Search item name or description" />
+        </div>
+
+        <div class="form-field">
+          <label for="category-filter">Category</label>
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <option>Mobile Phone</option>
+            <option>Laptop</option>
+            <option>Tablet</option>
+            <option>Watch</option>
+            <option>Earphones</option>
+            <option>ID Card</option>
+            <option>Wallet</option>
+            <option>Bag</option>
+            <option>Books</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="status-filter">Status</label>
+          <select id="status-filter">
+            <option value="">All Statuses</option>
+            <option>ACTIVE</option>
+            <option>CLAIMED</option>
+            <option>RETURNED</option>
+            <option>RESOLVED</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <section id="items-list" class="items-grid"></section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/items.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Campus Lost & Found</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Create Account</h1>
+        <p class="muted">Register as a student to report and claim campus items</p>
+      </div>
+
+      <form id="register-form">
+        <div class="form-grid">
+          <div class="form-field full-width">
+            <label for="full_name">Full Name</label>
+            <input id="full_name" name="full_name" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="student_id">Student ID</label>
+            <input id="student_id" name="student_id" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+
+          <div class="form-field full-width">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required minlength="6" />
+          </div>
+
+          <div class="form-field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" required minlength="6" />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Register</button>
+          <a class="btn btn-light" href="login.html">Already have an account?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    const registerForm = document.getElementById('register-form');
+
+    if (getStoredToken()) {
+      window.location.href = 'my-reports.html';
+    }
+
+    registerForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(registerForm);
+      const payload = {
+        full_name: formData.get('full_name'),
+        student_id: formData.get('student_id'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        password: formData.get('password'),
+        confirmPassword: formData.get('confirmPassword'),
+      };
+
+      try {
+        const response = await fetch(`${window.APP_CONFIG.API_URL}/auth/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.message || 'Registration failed');
+        }
+
+        saveAuthData(data.token, data.user);
+        showMessage('Registration successful.', 'success');
+        setTimeout(() => {
+          window.location.href = 'my-reports.html';
+        }, 700);
+      } catch (error) {
+        showMessage(error.message, 'error');
+      }
+    });
+  </script>
+</body>
+</html>
